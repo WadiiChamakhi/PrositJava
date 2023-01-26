@@ -3,25 +3,26 @@ import java.util.Scanner;
 public class ZooManagement {
 
 	public static void main(String[] args) {
-		int nbrCage = 20;
-		String zooName = "my zoo";
-		Scanner sc = new Scanner(System.in);
 		
-		//Récupération du nom du zoo
-		System.out.println("Veuillez entrer le nom du zoo");
-		zooName = sc.next();
+		Zoo myZoo = new Zoo();
+		Animal lion = new Animal();
 		
-		//Récupération du nombre de cages
-		System.out.println("Veuillez entrer le nombre de cages");
-		nbrCage = sc.nextInt();
+		myZoo.name="California Zoo";
+		myZoo.nrbCage = 20;
+		myZoo.city="California";
+		myZoo.animals = new Animal[25]; // initialiser le nombre de cases dans le tableau à 25
 		
-		//Vérification des entrées
-		if(nbrCage>0 && zooName!="") {
-			System.out.println(zooName+" comporte "+nbrCage+" cages");
-		}
-		else {
-			System.out.println("entrées non valide");
-		}
+		lion.name="Simba the King lion";
+		lion.age=15;
+		lion.isMammal=true;
+		lion.family="Félins";
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
