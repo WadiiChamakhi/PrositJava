@@ -20,6 +20,11 @@ public class Zoo {
 		System.out.println("number of cages : "+this.nbrCage);
 	}
 
+	@Override
+	public String toString() {
+		return "Zoo ["+" name=" + name + ", city=" + city + ", nbrCage=" + nbrCage
+				+ "]";
+	}
 
 	
 	

@@ -12,7 +12,10 @@ public class Animal {
 		this.isMammal = isMammal;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Animal [family=" + family + ", name=" + name + ", age=" + age + ", isMammal=" + isMammal + "]";
+	}
 	
 	
 	

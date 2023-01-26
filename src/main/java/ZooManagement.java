@@ -9,7 +9,7 @@ public class ZooManagement {
 		
 		myZoo.displayZoo();
 		System.out.println(myZoo);
-		System.out.println(myZoo.toString());
+		System.out.println(lion);
 
 		
 	}
