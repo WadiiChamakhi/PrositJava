@@ -7,7 +7,10 @@ public class ZooManagement {
 		Zoo myZoo = new Zoo(25, "Clifornia Zoo", "California", 20);
 		Animal lion = new Animal("Félins", "Simba the King lion", 15, true);
 		
-		System.out.println(myZoo.name);
+		myZoo.displayZoo();
+		System.out.println(myZoo);
+		System.out.println(myZoo.toString());
+
 		
 	}
 
