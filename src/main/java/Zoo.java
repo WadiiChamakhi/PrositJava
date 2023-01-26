@@ -37,6 +37,17 @@ public class Zoo {
 		return true;
 	}
 
+	boolean removeAnimal(Animal an) {
+		int index = searchAnimal(an);
+		if (index == -1) {
+			return false;
+		}
+		for (int i = index; i < numberOfAnimals - 1; i++) {
+			animals[i] = animals[i + 1];
+		}
+		numberOfAnimals--;
+		return true;
+	}
 
 	void displayAnimals() {
 		for (int i = 0; i < this.numberOfAnimals; i++) {
