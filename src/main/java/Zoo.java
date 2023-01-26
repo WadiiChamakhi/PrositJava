@@ -8,7 +8,8 @@ public class Zoo {
 	int numberOfAnimals;
 
 	public Zoo(int nbrAnimals, String name, String city, int nrbCage) {
-		this.animals = new Animal[nbrAnimals];;
+		this.animals = new Animal[nbrAnimals];
+		;
 		this.name = name;
 		this.city = city;
 		this.nbrCage = nrbCage;
@@ -27,9 +28,25 @@ public class Zoo {
 		return true;
 	}
 
+	void displayAnimals() {
+		for (int i = 0; i < this.numberOfAnimals; i++) {
+			System.out.println(animals[i]);
+		}
+	}
+
+	int searchAnimal(Animal an) {
+		for (int i = 0; i < this.numberOfAnimals; i++) {
+			if (animals[i] == an) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
 	@Override
 	public String toString() {
-		return "Zoo [" + " name=" + name + ", city=" + city + ", nbrCage=" + nbrCage  + ", numberOfAnimals=" + numberOfAnimals + "]";
+		return "Zoo [" + " name=" + name + ", city=" + city + ", nbrCage=" + nbrCage + ", numberOfAnimals="
+				+ numberOfAnimals + "]";
 	}
 
 }
