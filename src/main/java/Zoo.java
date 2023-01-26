@@ -23,10 +23,20 @@ public class Zoo {
 	}
 
 	boolean addAnimal(Animal an) {
+		// check array full
+		if (numberOfAnimals == animals.length) {
+			System.out.println("Zoo is full");
+			return false;
+		}
+		if (searchAnimal(an) != -1) {
+			System.out.println("Animal exists");
+			return false;
+		}
 		this.animals[numberOfAnimals] = an;
 		this.numberOfAnimals++;
 		return true;
 	}
+
 
 	void displayAnimals() {
 		for (int i = 0; i < this.numberOfAnimals; i++) {
@@ -36,7 +46,7 @@ public class Zoo {
 
 	int searchAnimal(Animal an) {
 		for (int i = 0; i < this.numberOfAnimals; i++) {
-			if (animals[i] == an) {
+			if (animals[i].equals(an)) {
 				return i;
 			}
 		}
