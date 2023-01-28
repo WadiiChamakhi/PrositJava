@@ -4,7 +4,7 @@ public class ZooManagement {
 
 	public static void main(String[] args) {
 		
-		Zoo myZoo = new Zoo(5, "Clifornia Zoo", "California", 20);
+		Zoo myZoo = new Zoo(55, "Clifornia Zoo", "California", 22);
 		Animal lion = new Animal("Félins", "Simba the King lion", 15, true);
 		Animal lion2 = new Animal("Félins", "Simba the King lion", 15, true);
 		

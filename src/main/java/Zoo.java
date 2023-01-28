@@ -1,19 +1,67 @@
 import java.util.Arrays;
 
 public class Zoo {
-	Animal[] animals;
-	String name;
-	String city;
-	int nbrCage;
-	int numberOfAnimals;
+	private Animal[] animals;
+	private String name;
+	private String city;
+	private int nbrCage;
+	private int numberOfAnimals;
 
-	public Zoo(int nbrAnimals, String name, String city, int nrbCage) {
-		this.animals = new Animal[nbrAnimals];
-		;
+	public Zoo(int nbrAnimals, String name, String city, int nbrCage) {
+		if (nbrAnimals > 50) {
+			System.err.println("zoo cant have more than 50 animals, setting to 50 animals");
+			this.animals = new Animal[50];
+		} else if (nbrAnimals>0){
+			this.animals = new Animal[nbrAnimals];
+		}else {
+			this.animals = new Animal[0];
+		}
 		this.name = name;
 		this.city = city;
-		this.nbrCage = nrbCage;
+		setNbrCage(nbrCage);
 	}
+	
+	
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+
+
+	public int getNbrCage() {
+		return nbrCage;
+	}
+
+
+
+	public void setNbrCage(int nbrCage) {
+		if (nbrCage < 10) {
+			System.err.println("zoo cant have less than 10 cages, setting to 10 cages");
+		} else if (nbrCage > 20) {
+			System.err.println("zoo cant have more than 20 cages, setting to 20 cages");
+		}
+	}
+
+
 
 	void displayZoo() {
 		System.out.println("name : " + this.name);
