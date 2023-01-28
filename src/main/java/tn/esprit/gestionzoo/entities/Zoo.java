@@ -1,3 +1,4 @@
+package tn.esprit.gestionzoo.entities;
 import java.util.Arrays;
 
 public class Zoo {
@@ -63,14 +64,14 @@ public class Zoo {
 
 
 
-	void displayZoo() {
+	public void displayZoo() {
 		System.out.println("name : " + this.name);
 		System.out.println("city : " + this.city);
 		System.out.println("number of cages : " + this.nbrCage);
 		System.out.println("number of Animals : " + this.numberOfAnimals);
 	}
 
-	boolean addAnimal(Animal an) {
+	public boolean addAnimal(Animal an) {
 		// check array full
 		if (numberOfAnimals == animals.length) {
 			System.out.println("Zoo is full");
@@ -85,7 +86,7 @@ public class Zoo {
 		return true;
 	}
 
-	boolean removeAnimal(Animal an) {
+	public boolean removeAnimal(Animal an) {
 		int index = searchAnimal(an);
 		if (index == -1) {
 			return false;
@@ -97,13 +98,13 @@ public class Zoo {
 		return true;
 	}
 
-	void displayAnimals() {
+	public void displayAnimals() {
 		for (int i = 0; i < this.numberOfAnimals; i++) {
 			System.out.println(animals[i]);
 		}
 	}
 
-	int searchAnimal(Animal an) {
+	public int searchAnimal(Animal an) {
 		for (int i = 0; i < this.numberOfAnimals; i++) {
 			if (animals[i].equals(an)) {
 				return i;
