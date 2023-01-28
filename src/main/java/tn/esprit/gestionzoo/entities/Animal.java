@@ -5,12 +5,17 @@ public class Animal {
 	private String name;
 	private int age;
 	private boolean isMammal;
+	
+	private static int totalNumberOfAnimals;
 
 	public Animal(String family, String name, int age, boolean isMammal) {
 		this.family = family;
 		this.name = name;
 		this.isMammal = isMammal;
 		setAge(age);
+		
+		System.out.println("A new animal is créated");
+		Animal.totalNumberOfAnimals++;
 	}
 
 	public String getFamily() {
