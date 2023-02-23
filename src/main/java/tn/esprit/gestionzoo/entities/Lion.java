@@ -7,6 +7,12 @@ public class Lion extends Animal{
 		super(family, name, age, isMammal);
 		this.circonferenceCriniere = circonferenceCriniere;
 	}
+
+	@Override
+	public void seDeplacer() {
+		System.out.println("Je suis un lion, je cours");
+		
+	}
 	
 	
 }

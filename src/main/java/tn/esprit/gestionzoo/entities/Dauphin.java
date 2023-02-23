@@ -7,6 +7,12 @@ public class Dauphin extends Animal{
 		super(family, name, age, isMammal);
 		this.profondeurMaximale = profondeurMaximale;
 	}
+
+	@Override
+	public void seDeplacer() {
+		System.out.println("Je suis un dauphin, je nage");
+		
+	}
 	
 	
 }

@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Animal {
+public abstract class Animal {
 	private String family;
 	private String name;
 	private int age;
@@ -54,6 +54,9 @@ public class Animal {
 	public void setMammal(boolean isMammal) {
 		this.isMammal = isMammal;
 	}
+	
+	
+	public abstract void seDeplacer();
 
 	@Override
 	public boolean equals(Object obj) {

@@ -7,6 +7,12 @@ public class Perroquet extends Animal{
 		super(family, name, age, isMammal);
 		this.hauteurMaximale = hauteurMaximale;
 	}
+
+	@Override
+	public void seDeplacer() {
+		System.out.println("Je suis un perroquet, je vole");
+		
+	}
 	
 	
 }
