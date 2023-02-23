@@ -13,6 +13,12 @@ public class Dauphin extends Animal{
 		System.out.println("Je suis un dauphin, je nage");
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Dauphin [profondeurMaximale=" + profondeurMaximale + "]"+ super.toString();
+	}
+	
 	
 	
 }

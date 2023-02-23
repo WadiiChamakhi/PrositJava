@@ -13,6 +13,13 @@ public class Lion extends Animal{
 		System.out.println("Je suis un lion, je cours");
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Lion [circonferenceCriniere=" + circonferenceCriniere + "]"+ super.toString();
+	}
+	
+	
 	
 	
 }

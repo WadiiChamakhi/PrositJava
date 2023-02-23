@@ -13,6 +13,13 @@ public class Perroquet extends Animal{
 		System.out.println("Je suis un perroquet, je vole");
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Perroquet [hauteurMaximale=" + hauteurMaximale + "]"+ super.toString();
+	}
+	
+	
 	
 	
 }
