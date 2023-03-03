@@ -1,6 +1,8 @@
 package tn.esprit.gestionzoo.entities;
 import java.util.Arrays;
 
+import tn.esprit.gestionzoo.interfaces.AnimalType;
+
 public class Zoo {
 	private Animal[] animals;
 	private String name;
@@ -103,7 +105,23 @@ public class Zoo {
 			System.out.println(animals[i]);
 		}
 	}
-
+	
+	public void displayAllPredators() {
+		System.out.println("Prédateurs : ");
+		for (int i = 0; i < this.numberOfAnimals; i++) {
+			if(((AnimalType)(animals[i])).estPredateur()) {
+				System.out.println(animals[i]);
+			}
+		}
+	}
+	public void displayAllPreys() {
+		System.out.println("Proies : ");
+		for (int i = 0; i < this.numberOfAnimals; i++) {
+			if(!((AnimalType)(animals[i])).estPredateur()) {
+				System.out.println(animals[i]);
+			}
+		}
+	}
 	public int searchAnimal(Animal an) {
 		for (int i = 0; i < this.numberOfAnimals; i++) {
 			if (animals[i].equals(an)) {
