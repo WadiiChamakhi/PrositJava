@@ -1,5 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
+import tn.esprit.gestionzoo.interfaces.AnimalType;
+
 public abstract class Animal {
 	private String family;
 	private String name;
@@ -86,7 +88,9 @@ public abstract class Animal {
 
 	@Override
 	public String toString() {
-		return "Animal [family=" + family + ", name=" + name + ", age=" + age + ", isMammal=" + isMammal + "]";
+		boolean estPredateur = ((AnimalType) this).estPredateur();
+		String predateur = estPredateur ? " est prédateur ":" n'est pas prdateur ";
+		return "Animal [family=" + family + ", name=" + name + ", age=" + age + predateur + ", isMammal=" + isMammal + "]";
 	}
 
 }
