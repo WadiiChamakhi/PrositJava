@@ -1,6 +1,8 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Lion extends Animal{
+import tn.esprit.gestionzoo.interfaces.AnimalType;
+
+public class Lion extends Animal implements AnimalType{
 	int circonferenceCriniere ;
 
 	public Lion(String family, String name, int age, boolean isMammal, int circonferenceCriniere) {
@@ -17,6 +19,10 @@ public class Lion extends Animal{
 	@Override
 	public String toString() {
 		return "Lion [circonferenceCriniere=" + circonferenceCriniere + "]"+ super.toString();
+	}
+
+	public boolean estPredateur() {
+		return true;
 	}
 	
 	
