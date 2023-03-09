@@ -109,16 +109,27 @@ public class Zoo {
 	public void displayAllPredators() {
 		System.out.println("Prédateurs : ");
 		for (int i = 0; i < this.numberOfAnimals; i++) {
-			if(((AnimalType)(animals[i])).estPredateur()) {
-				System.out.println(animals[i]);
+			try {
+				if(((AnimalType)(animals[i])).estPredateur()) {
+					System.out.println(animals[i]);
+				}
 			}
+			catch (ClassCastException e) {
+				System.err.println("l'animal de type : "+animals[i].getClass().getName()+" qui s'appelle "+animals[i].getName() +"n'est pas définie comme prédateur ou proie");
+			}
+			
 		}
 	}
 	public void displayAllPreys() {
 		System.out.println("Proies : ");
 		for (int i = 0; i < this.numberOfAnimals; i++) {
-			if(!((AnimalType)(animals[i])).estPredateur()) {
-				System.out.println(animals[i]);
+			try {
+				if(!((AnimalType)(animals[i])).estPredateur()) {
+					System.out.println(animals[i]);
+				}
+			}
+			catch (ClassCastException e) {
+				System.err.println("l'animal de type : "+animals[i].getClass().getName()+" qui s'appelle "+animals[i].getName() +" n'est pas définie comme prédateur ou proie");
 			}
 		}
 	}

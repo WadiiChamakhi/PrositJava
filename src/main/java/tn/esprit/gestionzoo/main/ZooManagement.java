@@ -24,6 +24,7 @@ public class ZooManagement {
 		myZoo.addAnimal(pero);
 		myZoo.addAnimal(singe);
 		myZoo.displayAllPreys();
+		myZoo.displayAllPredators();
 		
 
 		
