@@ -1,6 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 import java.util.Arrays;
 
+import tn.esprit.gestionzoo.exceptions.FullZooException;
 import tn.esprit.gestionzoo.interfaces.AnimalType;
 
 public class Zoo {
@@ -73,11 +74,10 @@ public class Zoo {
 		System.out.println("number of Animals : " + this.numberOfAnimals);
 	}
 
-	public boolean addAnimal(Animal an) {
+	public boolean addAnimal(Animal an) throws FullZooException {
 		// check array full
 		if (numberOfAnimals == animals.length) {
-			System.out.println("Zoo is full");
-			return false;
+			throw new FullZooException("Zoo is full");
 		}
 		if (searchAnimal(an) != -1) {
 			System.out.println("Animal exists");
