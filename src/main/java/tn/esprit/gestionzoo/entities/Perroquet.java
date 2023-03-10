@@ -1,8 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
-import tn.esprit.gestionzoo.interfaces.AnimalType;
 
-public class Perroquet extends Animal implements AnimalType{
+public class Perroquet extends Animal{
 	int hauteurMaximale ;
 
 	public Perroquet(String family, String name, int age, boolean isMammal, int hauteurMaximale) {

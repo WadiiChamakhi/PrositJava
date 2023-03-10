@@ -2,7 +2,7 @@ package tn.esprit.gestionzoo.entities;
 
 import tn.esprit.gestionzoo.interfaces.AnimalType;
 
-public abstract class Animal {
+public abstract class Animal implements AnimalType{
 	private String family;
 	private String name;
 	private int age;

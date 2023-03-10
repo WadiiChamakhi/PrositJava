@@ -25,4 +25,8 @@ public class Singe extends Animal {
 		return "Singe [fruitPrefere=" + fruitPrefere + "]" + super.toString();
 	}
 
+	public boolean estPredateur() {
+		return false;
+	}
+
 }
