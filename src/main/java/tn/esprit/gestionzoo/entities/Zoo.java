@@ -14,7 +14,7 @@ public class Zoo {
 	public Zoo(int nbrAnimals, String name, String city, int nbrCage) {
 		if (nbrAnimals > 50) {
 			System.err.println("zoo cant have more than 50 animals, setting to 50 animals");
-			this.animals = new Animal[50];
+			this.animals = new Animal[2];
 		} else if (nbrAnimals>0){
 			this.animals = new Animal[nbrAnimals];
 		}else {

@@ -6,6 +6,7 @@ import tn.esprit.gestionzoo.entities.Lion;
 import tn.esprit.gestionzoo.entities.Perroquet;
 import tn.esprit.gestionzoo.entities.Singe;
 import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.exceptions.FullZooException;
 
 public class ZooManagement {
 
@@ -18,11 +19,16 @@ public class ZooManagement {
 		
 		Singe singe = new Singe("Primate", "mooky", 10, true);
 		
-		myZoo.addAnimal(lion);
+		try {
+			myZoo.addAnimal(lion);
+			myZoo.addAnimal(lion2);
+			myZoo.addAnimal(pero);
+			myZoo.addAnimal(singe);
+		} catch (FullZooException e) {
+			e.printStackTrace();
+		}
 		
-		myZoo.addAnimal(lion2);
-		myZoo.addAnimal(pero);
-		myZoo.addAnimal(singe);
+		
 		myZoo.displayAllPreys();
 		myZoo.displayAllPredators();
 		
