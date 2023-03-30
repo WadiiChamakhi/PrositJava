@@ -12,7 +12,7 @@ public class ZooManagement {
 
 	public static void main(String[] args) {
 		
-		Zoo myZoo = new Zoo(55, "Clifornia Zoo", "California", 22);
+		Zoo myZoo = new Zoo("Clifornia Zoo", "California", 18);
 		Lion lion = new Lion("Félins", "Simba the King lion", 15, true,20);
 		Lion lion2 = new Lion("Félins", "Simba the King lion", 15, true,50);
 		Perroquet pero = new Perroquet("oiseau", "charlie", 20, false, 120);
