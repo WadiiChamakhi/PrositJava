@@ -1,13 +1,9 @@
 package tn.esprit.gestionzoo.entities;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import tn.esprit.gestionzoo.exceptions.FullZooException;
-import tn.esprit.gestionzoo.interfaces.AnimalType;
 
 public class Zoo {
 	private Set<Animal> animals;
@@ -16,7 +12,7 @@ public class Zoo {
 	private int nbrCage;
 
 	public Zoo(String name, String city, int nbrCage) {
-		this.animals = new HashSet<Animal>();
+		this.animals = new TreeSet<Animal>();
 		this.name = name;
 		this.city = city;
 		setNbrCage(nbrCage);

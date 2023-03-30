@@ -2,12 +2,12 @@ package tn.esprit.gestionzoo.entities;
 
 import tn.esprit.gestionzoo.interfaces.AnimalType;
 
-public abstract class Animal implements AnimalType{
+public abstract class Animal implements AnimalType, Comparable<Animal> {
 	private String family;
 	private String name;
 	private int age;
 	private boolean isMammal;
-	
+
 	private static int totalNumberOfAnimals;
 
 	public Animal(String family, String name, int age, boolean isMammal) {
@@ -15,7 +15,7 @@ public abstract class Animal implements AnimalType{
 		this.name = name;
 		this.isMammal = isMammal;
 		setAge(age);
-		
+
 		System.out.println("A new animal is créated");
 		Animal.totalNumberOfAnimals++;
 	}
@@ -56,11 +56,8 @@ public abstract class Animal implements AnimalType{
 	public void setMammal(boolean isMammal) {
 		this.isMammal = isMammal;
 	}
-	
-	
+
 	public abstract void seDeplacer();
-	
-	
 
 	@Override
 	public int hashCode() {
@@ -102,8 +99,16 @@ public abstract class Animal implements AnimalType{
 	@Override
 	public String toString() {
 		boolean estPredateur = ((AnimalType) this).estPredateur();
-		String predateur = estPredateur ? " est prédateur ":" n'est pas prdateur ";
-		return "Animal [family=" + family + ", name=" + name + ", age=" + age + predateur + ", isMammal=" + isMammal + "]";
+		String predateur = estPredateur ? " est prédateur " : " n'est pas prdateur ";
+		return "Animal [family=" + family + ", name=" + name + ", age=" + age + predateur + ", isMammal=" + isMammal
+				+ "]";
+	}
+
+	public int compareTo(Animal other) {
+		if (this.name.compareTo(other.name) == 0) {
+			return this.age - other.age;
+		}
+		return this.name.compareTo(other.name);
 	}
 
 }
