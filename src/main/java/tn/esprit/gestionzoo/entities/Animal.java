@@ -59,6 +59,19 @@ public abstract class Animal implements AnimalType{
 	
 	
 	public abstract void seDeplacer();
+	
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		result = prime * result + ((family == null) ? 0 : family.hashCode());
+		result = prime * result + (isMammal ? 1231 : 1237);
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
 
 	@Override
 	public boolean equals(Object obj) {

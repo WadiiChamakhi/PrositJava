@@ -2,19 +2,21 @@ package tn.esprit.gestionzoo.entities;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import tn.esprit.gestionzoo.exceptions.FullZooException;
 import tn.esprit.gestionzoo.interfaces.AnimalType;
 
 public class Zoo {
-	private List<Animal> animals;
+	private Set<Animal> animals;
 	private String name;
 	private String city;
 	private int nbrCage;
 
 	public Zoo(String name, String city, int nbrCage) {
-		this.animals = new ArrayList<Animal>();
+		this.animals = new HashSet<Animal>();
 		this.name = name;
 		this.city = city;
 		setNbrCage(nbrCage);
@@ -73,25 +75,25 @@ public class Zoo {
 	}
 
 	public void displayAnimals() {
-		for (int i = 0; i < this.animals.size(); i++) {
-			System.out.println(this.animals.get(i));
+		for(Animal a : this.animals) {
+			System.out.println(a);
 		}
 	}
 
 	public void displayAllPredators() {
 		System.out.println("Prédateurs : ");
-		for (int i = 0; i < this.animals.size(); i++) {
-			if (animals.get(i).estPredateur()) {
-				System.out.println(animals.get(i));
+		for(Animal a : this.animals) {
+			if (a.estPredateur()) {
+				System.out.println(a);
 			}
 		}
 	}
 
 	public void displayAllPreys() {
 		System.out.println("Proies : ");
-		for (int i = 0; i < this.animals.size(); i++) {
-			if (!(animals.get(i)).estPredateur()) {
-				System.out.println(animals.get(i));
+		for(Animal a : this.animals) {
+			if (!a.estPredateur()) {
+				System.out.println(a);
 			}
 		}
 	}

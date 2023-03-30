@@ -18,12 +18,14 @@ public class ZooManagement {
 		Perroquet pero = new Perroquet("oiseau", "charlie", 20, false, 120);
 		
 		Singe singe = new Singe("Primate", "mooky", 10, true);
+		Singe singe2 = new Singe("Primate", "mooky", 10, true);
 		
 		try {
 			myZoo.addAnimal(lion);
 			myZoo.addAnimal(lion2);
 			myZoo.addAnimal(pero);
 			myZoo.addAnimal(singe);
+			myZoo.addAnimal(singe2);
 		} catch (FullZooException e) {
 			e.printStackTrace();
 		}
