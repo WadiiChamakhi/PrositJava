@@ -1,5 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -88,10 +90,26 @@ public class Zoo {
 				System.err.println("Cannot affect non exsisting animal in this Zoo");
 			}
 		} else {
-			System.err.println("Cage number "+cageNumber+" does not exist");
+			System.err.println("Cage number " + cageNumber + " does not exist");
 
 		}
 
+	}
+
+	public TreeSet<Animal> getFreeAnimals() {
+		TreeSet<Animal> freeAnimals = (TreeSet<Animal>) this.animals;
+		freeAnimals.removeAll(getNonFreeAnimals());
+		return freeAnimals;
+	}
+	
+	public TreeSet<Animal> getNonFreeAnimals() {
+		TreeSet<Animal> nonFreeAnimals = new TreeSet<Animal>();
+
+		for (TreeSet<Animal> animals : this.animalsCage.values()) {
+			nonFreeAnimals.addAll(animals);
+		}
+
+		return nonFreeAnimals;
 	}
 
 	public boolean addAnimal(Animal an) throws FullZooException {

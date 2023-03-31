@@ -30,10 +30,10 @@ public class ZooManagement {
 			e.printStackTrace();
 		}
 		myZoo.affectAnimalToCage(0, singe);
-		myZoo.affectAnimalToCage(0, pero);
-		myZoo.affectAnimalToCage(1, lion);
-		myZoo.affectAnimalToCage(5, singe2);
-		System.out.println(myZoo.getAnimalsCage());
+		myZoo.affectAnimalToCage(3, pero);
+		
+		System.out.println(myZoo.getNonFreeAnimals());
+		
 
 		
 	}
