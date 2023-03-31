@@ -63,6 +63,15 @@ public class Zoo {
 		System.out.println("number of cages : " + this.nbrCage);
 		System.out.println("number of Animals : " + this.animals.size());
 	}
+	
+	public void addCage() {
+		if(this.animalsCage.size()==20) {
+			System.err.println("zoo cant have more than 20 cages");
+		}
+		else {
+			this.animalsCage.put(this.animalsCage.size(), null);
+		}
+	}
 
 	public boolean addAnimal(Animal an) throws FullZooException {
 		// check array full
