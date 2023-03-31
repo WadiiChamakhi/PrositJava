@@ -42,7 +42,7 @@ public class Zoo {
 	}
 
 	public int getNbrCage() {
-		return nbrCage;
+		return this.animalsCage.size();
 	}
 
 	public void setNbrCage(int nbrCage) {
@@ -65,11 +65,11 @@ public class Zoo {
 	}
 	
 	public void addCage() {
-		if(this.animalsCage.size()==20) {
+		if(getNbrCage()==20) {
 			System.err.println("zoo cant have more than 20 cages");
 		}
 		else {
-			this.animalsCage.put(this.animalsCage.size(), null);
+			this.animalsCage.put(getNbrCage(), null);
 		}
 	}
 
