@@ -28,8 +28,10 @@ public class ZooManagement {
 		} catch (FullZooException e) {
 			e.printStackTrace();
 		}
-		
-		
+		myZoo.affectAnimalToCage(0, singe);
+		myZoo.affectAnimalToCage(0, pero);
+		myZoo.affectAnimalToCage(1, lion);
+		System.out.println(myZoo.getAnimalsCage());
 
 		
 	}

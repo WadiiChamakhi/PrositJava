@@ -21,7 +21,7 @@ public class Zoo {
 
 		animalsCage = new TreeMap<Integer, TreeSet<Animal>>();
 		for (int i = 0; i < this.nbrCage; i++) {
-			animalsCage.put(i, null);
+			addCage();
 		}
 	}
 
@@ -43,6 +43,16 @@ public class Zoo {
 
 	public int getNbrCage() {
 		return this.animalsCage.size();
+	}
+	
+	
+
+	public TreeMap<Integer, TreeSet<Animal>> getAnimalsCage() {
+		return animalsCage;
+	}
+
+	public void setAnimalsCage(TreeMap<Integer, TreeSet<Animal>> animalsCage) {
+		this.animalsCage = animalsCage;
 	}
 
 	public void setNbrCage(int nbrCage) {
@@ -69,8 +79,13 @@ public class Zoo {
 			System.err.println("zoo cant have more than 20 cages");
 		}
 		else {
-			this.animalsCage.put(getNbrCage(), null);
+			this.animalsCage.put(getNbrCage(), new TreeSet<Animal>());
 		}
+	}
+	
+	public void affectAnimalToCage(int cageNumber, Animal animal) {
+		if(cageNumber<getNbrCage())
+		this.animalsCage.get(cageNumber).add(animal);
 	}
 
 	public boolean addAnimal(Animal an) throws FullZooException {
