@@ -44,8 +44,6 @@ public class Zoo {
 	public int getNbrCage() {
 		return this.animalsCage.size();
 	}
-	
-	
 
 	public TreeMap<Integer, TreeSet<Animal>> getAnimalsCage() {
 		return animalsCage;
@@ -73,19 +71,27 @@ public class Zoo {
 		System.out.println("number of cages : " + this.nbrCage);
 		System.out.println("number of Animals : " + this.animals.size());
 	}
-	
+
 	public void addCage() {
-		if(getNbrCage()==20) {
+		if (getNbrCage() == 20) {
 			System.err.println("zoo cant have more than 20 cages");
-		}
-		else {
+		} else {
 			this.animalsCage.put(getNbrCage(), new TreeSet<Animal>());
 		}
 	}
-	
+
 	public void affectAnimalToCage(int cageNumber, Animal animal) {
-		if(cageNumber<getNbrCage())
-		this.animalsCage.get(cageNumber).add(animal);
+		if (cageNumber < getNbrCage()) {
+			if (this.animals.contains(animal)) {
+				this.animalsCage.get(cageNumber).add(animal);
+			} else {
+				System.err.println("Cannot affect non exsisting animal in this Zoo");
+			}
+		} else {
+			System.err.println("Cage number "+cageNumber+" does not exist");
+
+		}
+
 	}
 
 	public boolean addAnimal(Animal an) throws FullZooException {

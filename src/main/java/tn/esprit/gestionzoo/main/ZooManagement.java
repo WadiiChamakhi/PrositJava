@@ -12,13 +12,14 @@ public class ZooManagement {
 
 	public static void main(String[] args) {
 		
-		Zoo myZoo = new Zoo("Clifornia Zoo", "California", 19);
+		Zoo myZoo = new Zoo("Clifornia Zoo", "California", 12);
 		
 		Lion lion = new Lion("Félins", "Simba the King lion", 15, true,20);
 		Perroquet pero = new Perroquet("oiseau", "charlie", 20, false, 120);
 		Singe singe = new Singe("Primate", "mooky", 10, true);
 		
-		myZoo.addCage();
+		Singe singe2 = new Singe("Primate", "saadoun", 12, true);
+		
 		myZoo.addCage();
 		
 		try {
@@ -31,6 +32,7 @@ public class ZooManagement {
 		myZoo.affectAnimalToCage(0, singe);
 		myZoo.affectAnimalToCage(0, pero);
 		myZoo.affectAnimalToCage(1, lion);
+		myZoo.affectAnimalToCage(5, singe2);
 		System.out.println(myZoo.getAnimalsCage());
 
 		
