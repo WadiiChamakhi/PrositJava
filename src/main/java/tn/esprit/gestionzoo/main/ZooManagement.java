@@ -12,27 +12,20 @@ public class ZooManagement {
 
 	public static void main(String[] args) {
 		
-		Zoo myZoo = new Zoo("Clifornia Zoo", "California", 18);
-		Lion lion = new Lion("Félins", "Simba the King lion", 15, true,20);
-		Lion lion2 = new Lion("Félins", "Simba the King lion", 15, true,50);
-		Perroquet pero = new Perroquet("oiseau", "charlie", 20, false, 120);
+		Zoo myZoo = new Zoo("Clifornia Zoo", "California", 9);
 		
+		Lion lion = new Lion("Félins", "Simba the King lion", 15, true,20);
+		Perroquet pero = new Perroquet("oiseau", "charlie", 20, false, 120);
 		Singe singe = new Singe("Primate", "mooky", 10, true);
-		Singe singe2 = new Singe("Primate", "mooky", 20, true);
 		
 		try {
 			myZoo.addAnimal(lion);
-			myZoo.addAnimal(lion2);
 			myZoo.addAnimal(pero);
 			myZoo.addAnimal(singe);
-			myZoo.addAnimal(singe2);
 		} catch (FullZooException e) {
 			e.printStackTrace();
 		}
 		
-		
-		myZoo.displayAllPreys();
-		myZoo.displayAllPredators();
 		
 
 		

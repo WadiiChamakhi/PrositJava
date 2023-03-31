@@ -16,7 +16,7 @@ public abstract class Animal implements AnimalType, Comparable<Animal> {
 		this.isMammal = isMammal;
 		setAge(age);
 
-		System.out.println("A new animal is créated");
+		//System.out.println("A new animal is créated");
 		Animal.totalNumberOfAnimals++;
 	}
 

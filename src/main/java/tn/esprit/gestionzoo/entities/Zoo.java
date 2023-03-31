@@ -1,6 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import tn.esprit.gestionzoo.exceptions.FullZooException;
@@ -10,12 +11,18 @@ public class Zoo {
 	private String name;
 	private String city;
 	private int nbrCage;
+	private TreeMap<Integer, TreeSet<Animal>> animalsCage;
 
 	public Zoo(String name, String city, int nbrCage) {
 		this.animals = new TreeSet<Animal>();
 		this.name = name;
 		this.city = city;
 		setNbrCage(nbrCage);
+
+		animalsCage = new TreeMap<Integer, TreeSet<Animal>>();
+		for (int i = 0; i < this.nbrCage; i++) {
+			animalsCage.put(i, null);
+		}
 	}
 
 	public String getName() {
@@ -41,8 +48,12 @@ public class Zoo {
 	public void setNbrCage(int nbrCage) {
 		if (nbrCage < 10) {
 			System.err.println("zoo cant have less than 10 cages, setting to 10 cages");
+			this.nbrCage = 10;
 		} else if (nbrCage > 20) {
 			System.err.println("zoo cant have more than 20 cages, setting to 20 cages");
+			this.nbrCage = 20;
+		} else {
+			this.nbrCage = nbrCage;
 		}
 	}
 
@@ -71,14 +82,14 @@ public class Zoo {
 	}
 
 	public void displayAnimals() {
-		for(Animal a : this.animals) {
+		for (Animal a : this.animals) {
 			System.out.println(a);
 		}
 	}
 
 	public void displayAllPredators() {
 		System.out.println("Prédateurs : ");
-		for(Animal a : this.animals) {
+		for (Animal a : this.animals) {
 			if (a.estPredateur()) {
 				System.out.println(a);
 			}
@@ -87,7 +98,7 @@ public class Zoo {
 
 	public void displayAllPreys() {
 		System.out.println("Proies : ");
-		for(Animal a : this.animals) {
+		for (Animal a : this.animals) {
 			if (!a.estPredateur()) {
 				System.out.println(a);
 			}
