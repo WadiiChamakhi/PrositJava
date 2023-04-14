@@ -131,9 +131,7 @@ public class Zoo {
 	}
 
 	public void displayAnimals() {
-		for (Animal a : this.animals) {
-			System.out.println(a);
-		}
+		animals.forEach(a->System.out.println(a));
 	}
 
 	public void displayAllPredators() {
