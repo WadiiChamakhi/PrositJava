@@ -17,11 +17,7 @@ public class Zoo {
 	private TreeMap<Integer, TreeSet<Animal>> animalsCage;
 
 	public Zoo(String name, String city, int nbrCage) {
-		this.animals = new TreeSet<Animal>(new Comparator<Animal>() {
-			public int compare(Animal o1, Animal o2) {
-				return o1.getFamily().compareTo(o2.getFamily());
-			}
-		});
+		this.animals = new TreeSet<Animal>((o1, o2) -> o1.getFamily().compareTo(o2.getFamily()));
 		this.name = name;
 		this.city = city;
 		setNbrCage(nbrCage);
