@@ -32,7 +32,7 @@ public class ZooManagement {
 		myZoo.affectAnimalToCage(0, singe);
 		myZoo.affectAnimalToCage(3, pero);
 		
-		System.out.println(myZoo.getNonFreeAnimals());
+		myZoo.displayAnimals();
 		
 
 		

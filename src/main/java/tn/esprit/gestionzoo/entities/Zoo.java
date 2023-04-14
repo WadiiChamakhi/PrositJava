@@ -1,6 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeMap;
@@ -16,7 +17,11 @@ public class Zoo {
 	private TreeMap<Integer, TreeSet<Animal>> animalsCage;
 
 	public Zoo(String name, String city, int nbrCage) {
-		this.animals = new TreeSet<Animal>();
+		this.animals = new TreeSet<Animal>(new Comparator<Animal>() {
+			public int compare(Animal o1, Animal o2) {
+				return o1.getFamily().compareTo(o2.getFamily());
+			}
+		});
 		this.name = name;
 		this.city = city;
 		setNbrCage(nbrCage);
@@ -101,7 +106,7 @@ public class Zoo {
 		freeAnimals.removeAll(getNonFreeAnimals());
 		return freeAnimals;
 	}
-	
+
 	public TreeSet<Animal> getNonFreeAnimals() {
 		TreeSet<Animal> nonFreeAnimals = new TreeSet<Animal>();
 
