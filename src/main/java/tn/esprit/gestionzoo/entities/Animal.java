@@ -99,7 +99,7 @@ public abstract class Animal implements AnimalType, Comparable<Animal> {
 	@Override
 	public String toString() {
 		boolean estPredateur = ((AnimalType) this).estPredateur();
-		String predateur = estPredateur ? " est prédateur " : " n'est pas prdateur ";
+		String predateur = this.getStringType();
 		return "Animal [family=" + family + ", name=" + name + ", age=" + age + predateur + ", isMammal=" + isMammal
 				+ "]";
 	}
